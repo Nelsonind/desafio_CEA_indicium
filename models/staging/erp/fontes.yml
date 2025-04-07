@@ -1,0 +1,49 @@
+sources:
+  - name: erp
+    description: 'Dados do Banco PostGreSql da Adventure Works'
+    schema: RAW_ADVENTURE_WORKS 
+    database: FEA24_11
+    tables:
+      - name: salesorderheader
+        columns:
+          - name: BusinessEntityId
+            data_tests:
+              - not_null        
+          - name: SalesOrderId
+            data_tests:
+              - unique
+              - not_null
+      
+      - name: salesreason
+        columns:
+          - name: salesreasonid
+            data_tests:
+              - unique
+              - not_null
+      
+      - name: salesorderdetail
+        columns:
+          - name: salesorderid
+            data_tests:
+              - not_null        
+          - name: salesorderdetailid
+            data_tests:
+              - not_null         
+          - name: salesreasonid
+            data_tests:
+              - unique
+              - not_null
+      
+      - name: address
+      - name: stateprovince
+      - name: countryregion
+
+      - name: creditcard
+
+      - name: person
+
+      - name: customer
+
+      - name: product
+
+      - name: shipmethod
