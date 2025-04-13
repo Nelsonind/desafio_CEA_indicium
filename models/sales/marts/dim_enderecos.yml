@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_endereco
+    description: >
+      Tabela dimensão com os enderecos relacionados ao funcionarios e clientes da Adventure Works
+    columns:
+      - name: pk_localizacao
+        description: Chave primária da dimensão de enderecos é a concatenação do endereco,estado e codigo do pais.
+        tests:
+          - unique
+          - not_null
+      - name: fk_cod_paises
+        description: Chave estrangeira referenciando o código do país.
+      - name: fk_estados
+        description: Chave estrangeira referenciando o código do estado.
+      - name: nm_pais
+        description:  Nome do país
+      - name: sigla_estados
+        description:  Sigla do estado
+      - name: nm_estado
+        description:  Nome do estado
+      - name: nm_cidade
+        description:  Nome da cidade
+      - name: endereco_princial
+        description:  Endereco principal cadastrado
+      - name: endereco_secundario
+        description:  Endereco secundario cadastrado
+      - name: cod_endereco
+        description:  Codigo do endereco
+      - name: localizao
+        description:  Informações para localização

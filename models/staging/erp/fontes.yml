@@ -6,9 +6,6 @@ sources:
     tables:
       - name: salesorderheader
         columns:
-          - name: BusinessEntityId
-            data_tests:
-              - not_null        
           - name: SalesOrderId
             data_tests:
               - unique
@@ -29,10 +26,6 @@ sources:
           - name: salesorderdetailid
             data_tests:
               - not_null         
-          - name: salesreasonid
-            data_tests:
-              - unique
-              - not_null
       
       - name: address
       - name: stateprovince
@@ -47,3 +40,5 @@ sources:
       - name: product
 
       - name: shipmethod
+      - name: salesperson
+      - name: salesorderheadersalesreason

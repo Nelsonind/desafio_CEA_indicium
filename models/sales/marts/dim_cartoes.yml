@@ -5,8 +5,10 @@ models:
     description: >
       Tabela dimensão com os tipos de cartões que nossos clientes utilizam para compras na Adventure Works
     columns:
-      - name: PK_PRODUTO
-        description: Chave primária da dimensão de produtos.
+      - name: pk_cartao_cred
+        description: Chave primária da dimensão de cartões.
         tests:
           - unique
           - not_null
+      - name: tp_cartao
+        description: tipo do cartão

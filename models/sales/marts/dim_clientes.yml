@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: >
+      Tabela dimensão com os clientes atendidos pela Adventure works
+    columns:
+      - name: pk_pessoas
+        description: Chave primária da dimensão de pessoas.
+        tests:
+          - unique
+          - not_null
+      - name: fk_lojas
+        description: Chave estrangeira referenciando o id da loja da compra.
+      - name: fk_territorio
+        description: Chave estrangeira referenciando o territorio que a compra ocorreu.
+      - name: pronome_tratamento
+        description: Pronome de tratamento a ser utilizado com o dono do cartão
+      - name: tp_estrategia_email
+        description: Tipo de estratégia de emailSC = Store Contact, IN = Individual (retail) customer, SP = Sales person, EM = Employee (non-sales), VC = Vendor contact, GC = General contact 
+      - name: dt_atualizacao
+        description: data de ultima carga da tabela

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_razao_venda
+    description: >
+      Tabela dimensão com os tipos de razões que geraram a venda de um produto
+    columns:
+      - name: pk_razao_venda_pedido
+        description: Chave primária da dimensão de razões/motivos.
+        tests:
+          - unique
+          - not_null
+      - name: fk_pedido_venda
+        description: tipo do cartão
+      - name: fk_razao_venda
+        description: Chave estrangeira referenciando o tipo de entrega da venda.
+      - name: razao_da_venda
+        description: descritivo da razao da venda
+      - name: tipo_razao
+        description: tipo relacionado ao descritivo da razao da venda
+        
