@@ -3,7 +3,7 @@
 
 with fonte_pessoa as (
     SELECT 
-        cast(BUSINESSENTITYID as string) as pk_pessoas
+        cast(BUSINESSENTITYID as int) as pk_pessoas
         ,cast(PERSONTYPE as string) as tp_pessoa
         ,cast(TITLE as string) as pronome_tratamento
         ,cast(FIRSTNAME as string) as primeiro_nome
@@ -14,7 +14,7 @@ with fonte_pessoa as (
         -- cast(NAMESTYLE as string) as
         -- cast(ADDITIONALCONTACTINFO as ) as
         -- cast(DEMOGRAPHICS as ) as
-        -- cast(ROWGUID as ) as
+        ,cast(ROWGUID as string) as identificador_do_pessoa
         -- cast(MODIFIEDDATE as ) as
     FROM 
     {{ source('erp', 'person') }}

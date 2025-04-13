@@ -4,8 +4,8 @@ with fonte_tipo_envio as (
         ,cast(NAME as string) as tp_entrega
         ,cast(SHIPBASE as decimal(18,2)) as vlr_base_entrega
         ,cast(SHIPRATE as decimal(18,2)) as tx_entrega
-        -- ,cast(ROWGUID as ) as
-        ,cast(MODIFIEDDATE as ) as dt_atualizacao
+        ,cast(ROWGUID as string) as identificador_do_registro_tipo_envio
+        ,cast(MODIFIEDDATE as date) as dt_atualizacao
     FROM 
     {{ source('erp', 'shipmethod') }}
 )

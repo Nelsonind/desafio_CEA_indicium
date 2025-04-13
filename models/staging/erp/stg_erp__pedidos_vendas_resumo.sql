@@ -10,21 +10,21 @@ with fonte_pedidos_vendas_resumo as (
         ,cast(CREDITCARDID as int) as fk_cartao_credito
         ,cast(CURRENCYRATEID as int) as fk_taxa_cambio
         ,cast(REVISIONNUMBER as int) as nmr_vzs_revisto
-        ,cast(ONLINEORDERFLAG as bool) as eh_compra_online
+        ,cast(ONLINEORDERFLAG as boolean) as eh_compra_online
         ,cast(ORDERDATE as date) as dt_pedido
         ,cast(DUEDATE as date) as dt_entrega
         ,cast(SHIPDATE as date) as dt_despachada
         ,cast(MODIFIEDDATE as date) as dt_atualizacao
         ,cast(STATUS as int ) as status
-        ,cast(PURCHASEORDERNUMBER as int) as nmr_ordem_pedido
-        ,cast(ACCOUNTNUMBER as int) as nmr_conta
+        ,cast(PURCHASEORDERNUMBER as string) as nmr_ordem_pedido
+        ,cast(ACCOUNTNUMBER as string) as nmr_conta
         ,cast(CREDITCARDAPPROVALCODE as string) as cod_aprov_cred_card
         ,cast(SUBTOTAL as numeric(18,2)) as vlr_subtotal
         ,cast(TAXAMT as numeric(18,4)) as  vlr_imposto
         ,cast(FREIGHT as numeric(18,4)) as vlr_frete
         ,cast(TOTALDUE as numeric(18,4)) as total_devido
         ,cast(COMMENT as string) as observacao
-        -- ,cast(ROWGUID as string) as ROWGUID
+        ,cast(ROWGUID as string) as identificador_do_venda_resumo
     FROM 
     {{ source('erp', 'salesorderheader') }}
 )

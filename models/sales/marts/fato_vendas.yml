@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: fato_vendas
+    description: >
+      Tabela fato sobre as vendas realizadas pela Adventure Works
+    columns:
+      - name: pk_vendas_detalhadas
+        description: Chave primária da fato vendas.
+        tests:
+          - unique
+          - not_null
