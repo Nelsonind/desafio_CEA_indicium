@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_cartoes
+    description: >
+      Tabela dimensão com os tipos de cartões que nossos clientes utilizam para compras na Adventure Works
+    columns:
+      - name: pk_pessoas
+        description: Chave primária da dimensão de vendedores.
+        tests:
+          - unique
+          - not_null
+      - name: nm_vendedor
+        description: Nome completo do vendedor
+      - name: tp_estrategia_email
+        description: Tipo de estratégia de email relacionada
+      - name: vlr_quota_de_venda
+        description: Valor da quota de venda a bater
+      - name: vlr_vendas_no_ano
+        description: Valor das vendas realizadas no ano
+      - name: vlr_vendas_ano_passado
+        description: Valor das vendas realizadas no ano anterior
+      - name: fk_cod_territorio
+        description: Chave estrangeira referenciando a tabela dimensão de territórios.

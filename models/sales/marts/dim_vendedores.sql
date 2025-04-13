@@ -24,12 +24,12 @@ with stg_pessoas as (
 joined as (
     select
         pk_pessoas
+        ,fk_cod_territorio
         ,concat(primeiro_nome," ",nome_intermediario) as nm_vendedor
         ,tp_estrategia_email
         ,vlr_quota_de_venda
         ,vlr_vendas_no_ano
         ,vlr_vendas_ano_passado
-        ,fk_cod_territorio
         ,'{{ run_started_at.strftime("%Y-%m-%d") }}' as dt_atualizacao
     from 
         stg_vendedores

@@ -15,7 +15,12 @@ with resumo as (
     ,dt_entrega
     ,dt_despachada
     ,dt_atualizacao
-    ,status
+    ,case when status =1 then 'Em processo'
+          when status= 2 then 'Aprovado'
+          when status= 3 then 'A devolver'
+          when status= 4 then 'Recusado'
+          when status= 5 then 'Cancelado'
+        else status end as status
     ,nmr_ordem_pedido
     ,nmr_conta
     ,cod_aprov_cred_card

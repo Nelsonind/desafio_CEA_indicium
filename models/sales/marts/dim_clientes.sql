@@ -34,7 +34,6 @@ staging_clientes as (
 joined as (
     select
         staging_pessoas.pk_pessoas
-        ,staging_clientes.fk_pessoas
         ,staging_clientes.fk_lojas
         ,staging_clientes.fk_territorio
         ,staging_pessoas.tp_pessoas

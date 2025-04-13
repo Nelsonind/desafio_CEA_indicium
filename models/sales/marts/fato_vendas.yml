@@ -3,10 +3,60 @@ version: 2
 models:
   - name: fato_vendas
     description: >
-      Tabela fato sobre as vendas realizadas pela Adventure Works
+      Tabela fato sobre as vendas realizadas pela   Adventure Works
     columns:
       - name: pk_vendas_detalhadas
-        description: Chave primária da fato vendas.
+        description: Chave primária da fato vendas é a concatenação da pk_pedido_venda,pk_detalhe_pedido.
         tests:
           - unique
           - not_null
+      - name: fk_produto
+        description: Chave estrangeira referenciando a tabela dimensão de produtos.
+      - name: fk_desconto
+        description: Chave estrangeira referenciando a tabela dimensão de descontos aplicados.
+      - name: fk_cliente
+        description: Chave estrangeira referenciando a tabela dimensão de clientes.
+      - name: fk_vendedor
+        description: Chave estrangeira referenciando a tabela dimensão de vendedores.
+      - name: fk_territorio
+        description: Chave estrangeira referenciando a tabela dimensão de territórios de venda.
+      - name: fk_end_comprador
+        description: Chave estrangeira referenciando o endereço do comprador.
+      - name: fk_end_destinatario
+        description: Chave estrangeira referenciando o endereço de entrega (destinatário).
+      - name: fk_tipo_entrega
+        description: Chave estrangeira referenciando o tipo de entrega da venda.
+      - name: fk_cartao_credito
+        description: Chave estrangeira referenciando os detalhes do cartão de crédito utilizado (se aplicável).
+      - name: fk_taxa_cambio
+        description: Chave estrangeira referenciando a taxa de câmbio utilizada na transação (se aplicável).
+      - name: nmr_rastreador_carregador
+        description: Número de rastreamento do carregamento/envio.
+      - name: status
+        description: Status atual do item da venda  1 = Em processo; 2 = Aprovado; 3 = Em revisão; 4 = Rejeitado; 5 = Enviado; 6 = Cancelado.
+      - name: eh_compra_online
+        description: Indicador se a compra foi realizada online (true/false).
+      - name: nmr_ordem_pedido
+        description: Número da ordem de pedido à qual este item pertence.
+      - name: nmr_conta
+        description: Número da conta do cliente associada à venda.
+      - name: dt_pedido
+        description: Data em que o pedido foi realizado.
+      - name: dt_entrega
+        description: Data prevista ou real da entrega do item.
+      - name: dt_despachada
+        description: Data em que o item foi despachado para entrega.
+      - name: vlr_qtd_pedido
+        description: Quantidade pedida deste item na venda.
+      - name: vlr_preco_unit
+        description: Preço unitário do produto no momento da venda.
+      - name: vlr_disconto_preco_unit
+        description: Valor do desconto aplicado ao preço unitário.
+      - name: vlr_total_negociado
+        description: Valor total negociado para este item (quantidade * preço unitário).
+      - name: vlr_total_negociado_liquido
+        description: Valor total líquido negociado para este item (após descontos).
+      - name: vlr_imposto_rateada
+        description: Valor do imposto rateado para este item da venda.
+      - name: vlr_frete_rateada
+        description: Valor do frete rateado para este item da venda.
